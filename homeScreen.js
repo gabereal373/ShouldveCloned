@@ -23,9 +23,8 @@ const HomeScreen = () => {
 
         <title>Backseat Gaming</title>
             <div className="header__text-box">
-                <h1 className="heading-primary">
-                    <span className="heading-primary--main weekly-tournaments">Weekly Tournaments</span>
-                </h1>
+
+                <div className="heading-primary--main weekly-tournaments">Weekly Tournaments</div>
 
                 <a href="/register" className="btn btn--white btn--animated">Register</a>
                 <a href="/score" className="btn btn--white btn--animated">Submit Scorecard</a>

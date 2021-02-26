@@ -90,7 +90,7 @@ const ScoreScreen = ({history}) => {
                         <div className="your-name">
                             <label htmlFor="team-name"></label>
                         </div>
-                            <h1>Scores Submission</h1>
+                            <div className="scores-submission-header">Scores Submission</div>
                             <div className="team-name">
                                 <label htmlFor="team-name"></label>
                                 <input type="text" placeholder="Team Name" id="team-name" value={team_name} onChange={(e) => setTeamName(e.target.value)}/>
@@ -119,7 +119,7 @@ const ScoreScreen = ({history}) => {
                             </div>
                             <br/>
                             <div className="time-slot-container">
-                                <h5>Start date/time</h5>
+                                <div className="start-date">Start date/time</div>
                                 <input type="time" id="time-slot" value="0:00" step="1800" value={time_slot} onChange={(e) => setTimeSlot(e.target.value)}/>
                                 <input type="date" id="date-slot" value="2021-01-24" value={tournament_date} onChange={(e) => setTournamentDate(e.target.value)}/>
                             </div>

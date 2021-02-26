@@ -1,21 +1,24 @@
-/* 
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-1200 - 1800px:  Where normal styles apply
-1800px + :      Big desktop 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  text-transform: uppercase;
+}
 
-$breakpoint argument choices 
-- phone 
-- tab-port 
-- tab-land 
-- big-desktop 
+html {
+  font-size: 62.5%;
+}
 
-ORDER: Base + typography > general layout + grid > page layout > components 
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 4.5rem;
+  background-color: black;
+}
 
-1 rem = 16px
-*/
-/* Animation Parameters: */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -57,113 +60,27 @@ ORDER: Base + typography > general layout + grid > page layout > components
   }
 }
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  /*Inherits from body */
-  text-transform: uppercase;
-}
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 4.5rem;
-}
-
-.home-container {
-  height: 100vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(255, 217, 0, 0.9),
-      rgba(255, 0, 0, 0.9)
-    ),
-    url("./images/cod-vert2.jpeg");
-  background-blend-mode: darken;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-}
-
-.heading-primary--main {
-  margin-top: 2rem;
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 1.4rem;
-  animation: moveInLeft 1s ease-out;
-}
-
-.weekly-tournaments {
-    margin-top: 30rem;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out;
-}
-
-#team-size {
-  font-size: 5px;
-}
-
-#rank {
-  font-size: 2rem;
-}
-
-#dateTimeLabel {
-  font-size: 3rem;
-  display: block;
-}
+/* UTILITIES */
+.hidden {
+    display: none;
+  }
 
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  width: 18rem;
-  display: inline-block;
+  display: block;
+
   border-radius: 1rem;
   transition: all 0.2s;
   position: relative;
-  font-size: 2.6rem;
-  display: inline-block;
-  margin: 5rem;
-  width: 30rem;
-  opacity: 0.7;
+  font-size: 2rem;
+  margin: 5rem auto;
+  width: 22rem;
+  opacity: 0.9;
 }
-@media (max-width: 37.5em) {
-  .btn:link,
-  .btn:visited {
-    margin: 2rem;
-  }
-}
+
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -204,46 +121,144 @@ body {
   animation-fill-mode: backwards;
 }
 
-.header {
+
+/* -------------HOME SCREEN-------------*/
+.home-container {
   height: 100vh;
-  background-size: cover;
-  position: relative;
   background-image: linear-gradient(
       to right bottom,
-      rgba(255, 145, 0, 0.9),
+      rgba(255, 217, 0, 0.9),
       rgba(255, 0, 0, 0.9)
     ),
-    url("./images/cod-vert2.jpeg");
-  background-blend-mode: saturation;
+    url("./images/cod-background.jpg");
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 5rem;
+  display: flex; 
+  justify-content: center;
 }
 
-.header__logo {
-  height: 5rem;
+.header__text-box {
+    text-align: center;
 }
 
-body {
-  background-color: black;
+
+.weekly-tournaments {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: .7rem;
+    margin: 0 auto;
 }
 
-.form-box {
-  position: relative;
-}
+/* -------------REGISTER SCREEN------------- */
+
 
 .form {
-  padding-top: 2rem;
-  font-size: 5rem;
-  text-align: center;
-  position: relative;
-  color: #fff;
-}
-@media (max-width: 37.5em) {
-  .form {
-    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    color: #fff;
   }
+
+  .team-section {
+      text-align: center;
+  }
+
+
+#team-size {
+  font-size: 5px;
 }
+
+#rank {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#dateTimeLabel {
+  font-size: 3rem;
+  display: block;
+}
+
+#teamSize {
+    font-size: 2rem;
+  }
+  
+  #payment {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  #payment,
+  #teamSize,
+  #rank,
+  .time-slot-h5,
+  .sign-up-h1 {
+    border-radius: 1rem;
+    opacity: 0.8;
+  }
+  
+  #rank {
+    margin-top: -2rem;
+  
+  }
+  
+  #tm-1,
+  #tm-2,
+  #tm-3,
+  #tm-4 {
+    padding-top: 3rem;
+  }
+  
+  .team-name,
+  .team-email,
+  .team-name {
+    padding: .2rem 0;
+    margin: 0 auto;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="number"],
+  input[type="time"] {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: .2rem auto;
+    width: 22rem;
+    opacity: 0.9;
+    text-align: center;
+    display: block; 
+  }
+  
+  #next-step {
+    padding: 0 2rem 0 2rem;
+    display: inline;
+  }
+
+  #form-submit {
+    background-color: white;
+    width: 22rem;
+    height: 5rem;
+    color: #333;
+    text-align: center;
+    padding-top: .5rem;
+    border-radius: .5rem;
+    font-size: 3rem;
+    display: block;
+    margin: 3rem auto 3rem auto;
+  }  
+
+/* -------------SCORES------------- */
+
+/* -------------PAYMENT------------- */
+
+/* -------------RULES------------- */
+
 .form h1 {
   font-size: 3rem;
-  padding-top: 2rem;
+  padding: 4rem 0;
 }
 .form h3 {
   text-transform: uppercase;
@@ -257,97 +272,6 @@ body {
 .info-block {
   padding-top: 10rem;
   font-size: 3rem;
-}
-
-#teamSize {
-  font-size: 2rem;
-}
-
-#payment {
-  padding: 0.5rem;
-  margin-top: 1rem;
-}
-
-#payment,
-#teamSize,
-#rank,
-.time-slot-h5,
-.sign-up-h1 {
-  border-radius: 1rem;
-  opacity: 0.8;
-}
-
-#rank {
-  margin-top: -5rem;
-}
-
-#tm-1,
-#tm-2,
-#tm-3,
-#tm-4 {
-  padding-top: 3rem;
-}
-
-.h1 {
-  padding-bottom: 2rem;
-}
-@media (max-width: 37.5em) {
-  .h1 {
-    padding-bottom: 0;
-  }
-}
-
-.team-name,
-.team-email,
-.team-name {
-  padding: 1rem 0;
-  margin: 0;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="date"],
-input[type="number"],
-input[type="time"] {
-  font-size: 1.5rem;
-  padding: 1rem;
-  margin: 2px;
-  width: 22rem;
-  opacity: 0.8;
-  text-align: center;
-}
-@media (max-width: 37.5em) {
-  input[type="text"],
-  input[type="number"],
-  input[type="date"],
-  input[type="number"],
-  input[type="time"] {
-    padding: 3px;
-    margin: 2px;
-    width: 50vw;
-  }
-}
-
-#next-stepa {
-  padding: 0 2rem 0 2rem;
-  display: inline;
-}
-
-#team-registration {
-  line-height: 3rem;
-}
-
-#form-submit {
-  background-color: white;
-  width: 25rem;
-  height: 5rem;
-  color: #333;
-  text-align: center;
-  padding-top: .5rem;
-  border-radius: 2px;
-  font-size: 3rem;
-  display: block;
-  margin: 3rem auto;
 }
 
 .submission-code input {
@@ -365,39 +289,54 @@ input[type="time"] {
 #teamSize,
 #rank {
   padding: 0.5rem;
-  margin-top: 5rem;
+  margin: .5rem auto;
 }
 
 #rank {
-  width: 10rem;
+  width: 15rem;
+  font-size: 1.5rem;
 }
 
+.register-heading, .start-date {
+    font-weight: 300; 
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+
+
 #team-registration {
-  height: 200vh;
+  padding-top: 4rem;
+  padding-bottom: 25rem;
+  line-height: 3rem;
   background-size: cover;
   background-image: linear-gradient(
-      to right bottom,
-      rgba(3, 29, 0, 0.9),
-      rgba(0, 242, 255, 0.9)
-    ),
+    to right bottom,
+    rgba(255, 217, 0, 0.9),
+    rgba(255, 0, 0, 0.9)
+  ),
     url("./images/cod-background.jpg");
   background-blend-mode: color-burn;
   background-attachment: fixed;
 }
 
-@media (max-width: 37.5em) {
-  .button-box {
-    margin-top: -2rem;
-  }
+.team-search-form {
+    padding-top: 4rem;
+  padding-bottom: 25rem;
+  line-height: 3rem;
+  background-size: cover;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 217, 0, 0.9),
+    rgba(255, 0, 0, 0.9)
+  ),
+    url("./images/cod-background.jpg");
+  background-blend-mode: color-burn;
+  background-attachment: fixed;
 }
 
 .button-box-1 {
   margin-top: 5rem;
-}
-@media (max-width: 37.5em) {
-  .button-box-1 {
-    margin: 2rem 0 5rem 0;
-  }
 }
 
 .form-container {
@@ -415,69 +354,130 @@ input[type="time"] {
   font-weight: bolder;
 }
 
-/* @media (min-width: 56.25em) {
-  .info-block {
+
+.start-date {
+    padding: .5rem 0;
     font-size: 3rem;
-    padding-bottom: 2rem;
-    margin-top: 3rem;
-  }
-} */
-
-.hidden {
-  display: none;
-}
-
-.card-2 {
-  text-align: center;
-  margin-top: -4rem;
-  background-size: cover;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(255, 217, 0, 0.9),
-      rgba(255, 0, 0, 0.9)
-    ),
-    url("./images/cod-vert2.jpeg");
-  background-blend-mode: darken;
-}
-@media (max-width: 37.5em) {
-  .card-2 {
-    line-height: 3rem;
-    font-size: 1rem;
-  }
-}
-@media (max-width: 37.5em) {
-  .card-2 .h1 {
-    font-weight: lighter;
-  }
-}
-
-@media (max-width: 37.5em) {
-  #code-submit {
-    padding: 0 2rem 0 2rem;
-  }
 }
 
 .time-slot-h5 {
   padding-bottom: 4rem;
 }
 
+.time-slot-button {
+    opacity: .9;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
 #dateTimeLabel {
   margin-bottom: 2rem;
 }
 
-.table-container {
-  height: 100vh;
+/* Rules section */
+.rules-container {
+    width: 100vw;
+    color: #fff;
+    background-image: linear-gradient(
+    to right bottom,
+    rgba(5, 1, 41, 0.83),
+    rgba(54, 9, 1, 0.9)
+  ),
+    url("./images/cod-background.jpg");
+  background-attachment: fixed;
+  padding: 4rem;
+}
+
+
+.rules-header {
+    text-align: center;
+}
+
+.rules {
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    font-weight: 300;
+}
+
+.points-container {
+    border: .5px solid #fff;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 300px;
+}
+
+.points {
+    display: block;
+    text-align: center;
 }
 
 .content-table {
+    font-size: 1rem;
+    font-weight: 300;
+    width: 300px;
+    text-align: center;
+    margin: 2rem auto;
+    border: 1px solid #fff;
+    margin-bottom: 20rem;
+}
+
+.table-title {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* .rules-container {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 217, 0, 0.9),
+        rgba(255, 0, 0, 0.9)
+        ),
+        url("./images/cod-vert2.jpeg");
+        background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.719);
+  background-attachment: fixed;
+  width: 100vw;
+  min-width: 100%;
+}
+
+.rule-header {
+    font-size: 5rem;
+    padding-top: 5rem;
+}
+.rules-text {
+    width: 100vw;
+    margin: 0 auto;
+    font-size: 2rem;
+    padding: 2rem;
+    line-height: 4rem;
+    text-align: justify;
+}
+
+
+.rule-textbox {
+    text-align: center;
+    color: #fff;
+    width: 100vw;
+}
+
+
+
+
+/* .content-table {
   border-collapse: collapse;
   font-size: 1.9rem;
-  min-width: 400px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  opacity: 0.9;
   width: 100vw;
-  height: 100vh;
-  opacity: 0.7;
+    height: 100vh;
 }
 
 .content-table thead tr {
@@ -485,11 +485,12 @@ input[type="time"] {
   color: #ffffff;
   text-align: left;
   font-weight: bold;
+
 }
 
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
+  padding: .5rem 1rem;
 }
 
 .content-table tbody tr {
@@ -509,86 +510,10 @@ input[type="time"] {
   color: #55b4c5;
 }
 
-
-/* Rules section */
-.rules-container {
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(255, 217, 0, 0.9),
-        rgba(255, 0, 0, 0.9)
-        ),
-        url("./images/cod-vert2.jpeg");
-        background-blend-mode: darken;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: rgba(0, 0, 0, 0.719);
-  background-attachment: fixed;
-  min-width: 550px;
-}
-
-.rule-header {
-    font-size: 5rem;
-    padding-top: 5rem;
-}
-.rules-text {
-    font-size: 2.5rem;
-    line-height: 4rem;
-    padding: 5rem;
-    text-align: center;
-}
-
-
-/* Make rules look good on phone */
-@media screen and (max-width: 500px) {
-    .rules-text, .rule-header {
-        font-size: 2rem;
-        max-width: 400px;
-        line-height: 3.5rem;
-    }
-}
-
-
-
-.rule-textbox {
-  min-width: 400px;
-  text-align: center;
-  color: white;
-}
-
-.table-title {
-    font-size: 2.5rem;
-    margin: 2rem;
-}
-
-th {
-    text-align: center;
-}
-
-.payment-container {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(255, 217, 0, 0.9),
-      rgba(255, 0, 0, 0.9)
-    ),
-    url("./images/cod-vert2.jpeg");
-  background-blend-mode: darken;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.team-search-form {
-  padding-top: 5rem;
-  font-size: 2rem;
-  text-align: center;
-  position: relative;
-  color: #fff;
-}
-
 /* Error Messages */
 .message-container {
-    line-height: 5.5rem;
-    font-size: 3rem;
+    line-height: 4rem;
+    font-size: 2.5rem;
 }
 
 /* Paypal button */
@@ -598,9 +523,6 @@ th {
     margin-top: 5rem;
 }
 
-.paypal {
-    width: 100%;
-}
 
 /* Look up team */
 #team-lookup {
@@ -609,24 +531,25 @@ th {
 
 /* Score submission */
 #score-submission { 
-    height: 200vh;
     background-image: linear-gradient(
       to right bottom,
       rgba(255, 217, 0, 0.9),
       rgba(255, 0, 0, 0.9)
     ),
-    url("./images/cod-vert2.jpeg");
-  background-blend-mode: darken;
+    url("./images/cod-background.jpg");
+  background-blend-mode: color-burn;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  padding-top: 2rem;
+  padding-bottom: 25rem;
 }
 
-/* Dropdown button shinanigans */
-/* .time-slot-container {
-    width: 22rem;
-    margin: 0 auto;
-    height: 22rem;
-} */
+.scores-submission-header {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
 
 .time-slot-button {
     width: 22rem;
@@ -651,6 +574,16 @@ th {
 }
 
 /* Dropdown menu appears */
+.payment-heading, .payment-start-date {
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem;
+    line-height: 4rem;
+    color: #fff;
+    text-align: center;
+}
+
+
 .dropdown-container:hover .time-slot-options {
     display: block;
 }

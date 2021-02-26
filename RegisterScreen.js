@@ -127,9 +127,12 @@ const RegisterScreen = ({history}) => {
                 <form id="team-registration" className="form">        
                     <div className="team-section">
                         <div className="your-name">
-                            <label htmlFor="team-name">Team Name</label>
+                            {/* <label htmlFor="team-name">Team Name</label> */}
+
+                            {/* JEFF */}
+                            {/* Is there supposed to be a your-name input here?*/}
                         </div>
-                            <h1>Sign up for next tournament</h1>
+                            <div className="register-heading">Sign up for next tournament</div>
                             <div className="team-name">
                                 <label htmlFor="team-name"></label>
                                 <input type="text" placeholder="Team Name" id="team-name" value={team_name} onChange={(e) => setTeamName(e.target.value)}/>
@@ -144,61 +147,71 @@ const RegisterScreen = ({history}) => {
                             </div>
                             <br/>
                             <div className="time-slot-container" id="date-time">
-                                <h5>Start date/time</h5>
+                                <div className="start-date">Start date/time</div>
                                 {/* <input type="time" id="time-slot"  onChange={(e) => setTimeSlot(e.target.value)}/> */}
                                 <input type="date" id="date-slot"  onChange={(e) => setTournDate(e.target.value)}/>
+                                <select name="time-slot" id="time-slot" className="time-slot-button"  value={time_slot} onChange={(e) => setTimeSlot(e.target.value)}>
+                                <option value="0" id="place_holder">Pick a Time (EST)</option>
+                                        <option className="time-slot" value="0:00">12:00 AM</option>
+                                        <option className="time-slot" value="0:30">12:30 AM</option>
+                                        <option className="time-slot" value="1:00">1:00 AM</option>
+                                        <option className="time-slot" value="1:30">1:30 AM</option>
+                                        <option className="time-slot" value="2:00">2:00 AM</option>
+                                        <option className="time-slot" value="2:30">2:30 AM</option>
+                                        <option className="time-slot" value="3:00">3:00 AM</option>
+                                        <option className="time-slot" value="3:30">3:30 AM</option>
+                                        <option className="time-slot" value="4:00">4:00 AM</option>
+                                        <option className="time-slot" value="4:30">4:30 AM</option>
+                                        <option className="time-slot" value="5:00">5:00 AM</option>
+                                        <option className="time-slot" value="5:30">5:30 AM</option>
+                                        <option className="time-slot" value="6:00">6:00 AM</option>
+                                        <option className="time-slot" value="6:30">6:30 AM</option>
+                                        <option className="time-slot" value="7:00">7:00 AM</option>
+                                        <option className="time-slot" value="7:30">7:30 AM</option>
+                                        <option className="time-slot" value="8:00">8:00 AM</option>
+                                        <option className="time-slot" value="8:30">8:30 AM</option>
+                                        <option className="time-slot" value="9:00">9:00 AM</option>
+                                        <option className="time-slot" value="9:30">9:30 AM</option>
+                                        <option className="time-slot" value="10:00">10:00 AM</option>
+                                        <option className="time-slot" value="10:30">10:30 AM</option>
+                                        <option className="time-slot" value="11:00">11:00 AM</option>
+                                        <option className="time-slot" value="11:30">11:30 AM</option>
+                                        <option className="time-slot" value="12:00">12:00 PM</option>
+                                        <option className="time-slot" value="12:30">12:30 PM</option>
+                                        <option className="time-slot" value="13:00">1:00 PM</option>
+                                        <option className="time-slot" value="13:30">1:30 PM</option>
+                                        <option className="time-slot" value="14:00">2:00 PM</option>
+                                        <option className="time-slot" value="14:30">2:30 PM</option>
+                                        <option className="time-slot" value="15:00">3:00 PM</option>
+                                        <option className="time-slot" value="15:30">3:30 PM</option>
+                                        <option className="time-slot" value="16:00">4:00 PM</option>
+                                        <option className="time-slot" value="16:30">4:30 PM</option>
+                                        <option className="time-slot" value="17:00">5:00 PM</option>
+                                        <option className="time-slot" value="17:30">5:30 PM</option>
+                                        <option className="time-slot" value="18:00">6:00 PM</option>
+                                        <option className="time-slot" value="18:30">6:30 PM</option>
+                                        <option className="time-slot" value="19:00">7:00 PM</option>
+                                        <option className="time-slot" value="19:30">7:30 PM</option>
+                                        <option className="time-slot" value="20:00">8:00 PM</option>
+                                        <option className="time-slot" value="20:30">8:30 PM</option>
+                                        <option className="time-slot" value="21:00">9:00 PM</option>
+                                        <option className="time-slot" value="21:30">9:30 PM</option>
+                                        <option className="time-slot" value="22:00">10:00 PM</option>
+                                        <option className="time-slot" value="22:30">10:30 PM</option>
+                                        <option className="time-slot" value="23:00">11:00 PM</option>
+                                        <option className="time-slot" value="23:30">11:30 PM</option>
+                                </select>
                                 <div className="dropdown-container">
-                                    <button className="time-slot-button" value={time_slot} onChange={(e) => setTimeSlot(e.target.value)}>Pick a time</button>
-                                    <div className="time-slot-options">
-                                        <button className="time-slot" value="0:00">12:00 AM</button>
-                                        <button className="time-slot" value="0:30">12:30 AM</button>
-                                        <button className="time-slot" value="1:00">1:00 AM</button>
-                                        <button className="time-slot" value="1:30">1:30 AM</button>
-                                        <button className="time-slot" value="2:00">2:00 AM</button>
-                                        <button className="time-slot" value="2:30">2:30 AM</button>
-                                        <button className="time-slot" value="3:00">3:00 AM</button>
-                                        <button className="time-slot" value="3:30">3:30 AM</button>
-                                        <button className="time-slot" value="4:00">4:00 AM</button>
-                                        <button className="time-slot" value="4:30">4:30 AM</button>
-                                        <button className="time-slot" value="5:00">5:00 AM</button>
-                                        <button className="time-slot" value="5:30">5:30 AM</button>
-                                        <button className="time-slot" value="6:00">6:00 AM</button>
-                                        <button className="time-slot" value="6:30">6:30 AM</button>
-                                        <button className="time-slot" value="7:00">7:00 AM</button>
-                                        <button className="time-slot" value="7:30">7:30 AM</button>
-                                        <button className="time-slot" value="8:00">8:00 AM</button>
-                                        <button className="time-slot" value="8:30">8:30 AM</button>
-                                        <button className="time-slot" value="9:00">9:00 AM</button>
-                                        <button className="time-slot" value="9:30">9:30 AM</button>
-                                        <button className="time-slot" value="10:00">10:00 AM</button>
-                                        <button className="time-slot" value="10:30">10:30 AM</button>
-                                        <button className="time-slot" value="11:00">11:00 AM</button>
-                                        <button className="time-slot" value="11:30">11:30 AM</button>
-                                        <button className="time-slot" value="12:00">12:00 PM</button>
-                                        <button className="time-slot" value="12:30">12:30 PM</button>
-                                        <button className="time-slot" value="13:00">1:00 PM</button>
-                                        <button className="time-slot" value="13:30">1:30 PM</button>
-                                        <button className="time-slot" value="14:00">2:00 PM</button>
-                                        <button className="time-slot" value="14:30">2:30 PM</button>
-                                        <button className="time-slot" value="15:00">3:00 PM</button>
-                                        <button className="time-slot" value="15:30">3:30 PM</button>
-                                        <button className="time-slot" value="16:00">4:00 PM</button>
-                                        <button className="time-slot" value="16:30">4:30 PM</button>
-                                        <button className="time-slot" value="17:00">5:00 PM</button>
-                                        <button className="time-slot" value="17:30">5:30 PM</button>
-                                        <button className="time-slot" value="18:00">6:00 PM</button>
-                                        <button className="time-slot" value="18:30">6:30 PM</button>
-                                        <button className="time-slot" value="19:00">7:00 PM</button>
-                                        <button className="time-slot" value="19:30">7:30 PM</button>
-                                        <button className="time-slot" value="20:00">8:00 PM</button>
-                                        <button className="time-slot" value="20:30">8:30 PM</button>
-                                        <button className="time-slot" value="21:00">9:00 PM</button>
-                                        <button className="time-slot" value="21:30">9:30 PM</button>
-                                        <button className="time-slot" value="22:00">10:00 PM</button>
-                                        <button className="time-slot" value="22:30">10:30 PM</button>
-                                        <button className="time-slot" value="23:00">11:00 PM</button>
-                                        <button className="time-slot" value="23:30">11:30 PM</button>
-                                    </div>
+                                    {/* <button className="time-slot-button" value={time_slot} onChange={(e) => setTimeSlot(e.target.value)}>Pick a time</button> */}
+                                    <select value="pick a time" className="time-slot-options">
+                                        <option value="0" id="place_holder">Pick a Time</option>
+                                        <option className="time-slot" value="0:00">12:00 AM</option>
+                                        <option className="time-slot" value="0:30">12:30 AM</option>
+                                        <option className="time-slot" value="1:00">1:00 AM</option>
+                                        <option className="time-slot" value="1:30">1:30 AM</option>
+                                        <option className="time-slot" value="2:00">2:00 AM</option>
+                                        
+                                    </select>
                                 </div>
                             </div>
                                 <select name="teamSize" id="teamSize" onChange={formUpdate}>

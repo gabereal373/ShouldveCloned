@@ -56,7 +56,7 @@ const PaymentScreen = () => {
                         <div className="your-name">
                             <label htmlFor="team-name"></label>
                         </div>
-                            <h1>Check Your Payment Status</h1>
+                            <div className="payment-heading">Check Your Payment Status</div>
                             <div className="team-name">
                                 <label htmlFor="team-name"></label>
                                 <input type="text" placeholder="Team Name" id="team-name" value={team_name} onChange={(e) => setTeamName(e.target.value)}/>
@@ -67,7 +67,7 @@ const PaymentScreen = () => {
                             </div>
                             <br/>
                             <div className="time-slot-container" id="date-time">
-                                <h5>Start date/time</h5>
+                                <div className="payment-start-date">Start date/time</div>
                                 <input type="time" id="time-slot" value={time_slot} onChange={(e) => setTimeSlot(e.target.value)}/>
                                 <input type="date" id="date-slot" value={tournament_date} onChange={(e) => setTournDate(e.target.value)}/>
                             </div>
